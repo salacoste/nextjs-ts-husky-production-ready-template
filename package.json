@@ -12,7 +12,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "console.log('husky pre-push hook')"
     }
   },
   "lint-staged": {
