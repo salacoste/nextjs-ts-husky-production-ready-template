@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+NextJS 13 with linting, pretting, VSCode props and TS, husky configured template for production ready projects. The project was bootstrapped from create-next-app
 
 ## Getting Started
 
