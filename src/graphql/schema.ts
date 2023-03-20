@@ -11,19 +11,31 @@ export const typeDefs = gql`
     createdAt: String
   }
 
+  type deleteResult {
+    status: String
+    message: String
+    tool: Tool
+  }
+
   type Query {
     getTools: [Tool!]!
     getId: String
     getTool(id: String!): Tool
   }
+
   type Mutation {
     addTool(
       name: String!
       link: String!
       description: String!
       image: String!
-      ): Tool
-    deleteTool(id: String!): Tool
-
+    ): Tool
+    deleteTool(id: String!): deleteResult!
+    updateTool(
+      id: String!
+      name: String
+      link: String
+      description: String
+    ): Tool
   }
 `;
