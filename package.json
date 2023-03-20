@@ -7,13 +7,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "prisma:init": "yarn prisma:pull && yarn prisma:generate && yarn prisma:seed",
     "prisma:pull": "npx prisma db pull",
     "prisma:seed": "npx prisma db seed",
     "prisma:generate": "npx prisma generate",
     "prisma:migrate": "npx prisma migrate"
   },
   "prisma": {
-    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} lib/prisma/seed.ts"
+    "schema": "./src/lib/prisma/schema.prisma",
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} ./src/lib/prisma/seed.ts"
   },
   "husky": {
     "hooks": {
@@ -30,6 +32,7 @@
   "dependencies": {
     "@apollo/server": "^4.5.0",
     "@as-integrations/next": "^1.2.0",
+    "@prisma/client": "^4.11.0",
     "@types/node": "18.15.3",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
@@ -46,6 +49,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
     "prettier": "^2.8.4",
+    "prisma": "^4.11.0",
     "ts-node": "^10.9.1"
   }
 }

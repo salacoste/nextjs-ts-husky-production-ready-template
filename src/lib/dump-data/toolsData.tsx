@@ -1,6 +1,6 @@
+import { Tool } from './types';
 
-
-const data = [
+const data: Tool[] = [
   {
     image: '/typescript.svg',
     id: 1,
