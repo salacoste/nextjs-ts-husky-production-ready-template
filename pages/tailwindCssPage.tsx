@@ -6,7 +6,6 @@ import { Tool } from '@/lib/dump-data/types';
 
 export default function TailwindPage(props: {}) {
   const { loading, error, data } = useQuery(getAllTools);
-  console.log(data, error, loading);
   if (loading) {
     return <div>Loading...</div>;
   }
