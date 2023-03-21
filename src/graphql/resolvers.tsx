@@ -1,6 +1,7 @@
 import { Tool } from '@/lib/dump-data/types';
 import { prisma } from '@/lib/prisma/prismaClient';
 import tools from '../lib/dump-data/toolsData';
+import { IContext } from './types';
 
 export const resolvers = {
   Query: {
@@ -13,7 +14,7 @@ export const resolvers = {
       context: IContext,
       info: {},
     ) => {
-      const tools = await prisma.tool.findMany({});
+      const tools = await context.prisma.tool.findMany({});
       return tools;
     },
     getTool: async (
@@ -37,7 +38,7 @@ export const resolvers = {
       args: { name: string; link: string; description: string; image: string },
       context: IContext,
       info: {},
-    ): Promise<ITool> => {
+    ): Promise<Tool> => {
       const tools = await prisma.tool.findMany({});
       const newTool = {
         id: tools.length + 1,

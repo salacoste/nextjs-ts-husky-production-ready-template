@@ -1,6 +1,9 @@
-declare interface IContext {
+import { PrismaClient } from '@prisma/client';
+
+export declare interface IContext {
   test?: string;
   id?: number;
+  prisma: PrismaClient;
 }
 
 declare type ITool = {
